@@ -41,9 +41,8 @@ brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
 
-# Install tmux, tmuxinator, reattach-to-user-namespace for tmux config
+# Install tmux, reattach-to-user-namespace for tmux config
 brew install tmux
-brew install tmuxinator
 brew install reattach-to-user-namespace
 
 # Install font tools.
