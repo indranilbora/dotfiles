@@ -1,4 +1,5 @@
 set laststatus=2
+set encoding=utf-8
 
 set incsearch
 
@@ -6,6 +7,8 @@ set number " show line number
 set cursorline
 set scrolloff=5
 
+set foldmethod=indent
+set foldlevel=99
 set backspace=indent,eol,start
 set smarttab
 set expandtab
@@ -49,6 +52,32 @@ set clipboard=unnamed
 " PERFORMANCE
 set synmaxcol=200
 
+" PYTHON SETTINGS
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
 " ==================================================================
 " PLUGIN MANAGEMENT
 " ==================================================================
@@ -58,7 +87,7 @@ call vundle#begin()
 " COLOR SCHEME
 Plugin 'KeitaNakamura/neodark.vim'
 
-
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
@@ -70,8 +99,9 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'kien/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'dracula/vim'
+Plugin 'nvie/vim-flake8'
+
+Bundle 'Valloric/YouCompleteMe'
 
 " EXTENDED LANGUAGES
 Plugin 'othree/html5.vim'
@@ -98,11 +128,17 @@ call vundle#end()
 inoremap jj <ESC> " remap jj to escape in insert mode
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>  " remove all trailing whitespace by pressing F5
 
-let g:nord_italic_comments = 1
-colorscheme dracula 
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding with the spacebar
+nnoremap <space> za
 
 let g:lightline = {
-    \ 'colorscheme': 'Dracula',
+    \ 'colorscheme': 'gruvbox',
       \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
         \ 'subseparator': { 'left': '▒', 'right': '░' }
           \ }
@@ -127,4 +163,26 @@ let g:ale_fixers = {
 let g:ale_javascript_prettier_options = '--no-semi --single-quote --trailing-comma es5'
 let g:ale_fix_on_save = 1
 
+let python_highlight_all = 1
 syntax on
+
+
+set background=dark
+colorscheme gruvbox
+hi vertsplit ctermfg=238 ctermbg=235
+hi LineNr ctermfg=237
+hi StatusLine ctermfg=235 ctermbg=245
+hi StatusLineNC ctermfg=235 ctermbg=237
+hi Search ctermbg=58 ctermfg=15
+hi Default ctermfg=1
+hi clear SignColumn
+hi SignColumn ctermbg=235
+hi GitGutterAdd ctermbg=235 ctermfg=245
+hi GitGutterChange ctermbg=235 ctermfg=245
+hi GitGutterDelete ctermbg=235 ctermfg=245
+hi GitGutterChangeDelete ctermbg=235 ctermfg=245
+hi EndOfBuffer ctermfg=237 ctermbg=235
+
+set statusline=%=&P\ %f\ %m
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+set noshowmode
