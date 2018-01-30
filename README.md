@@ -1,4 +1,6 @@
 # dotfiles
+git, tmux, vim, zsh
+
 
 For OSX:
 ```
