@@ -125,8 +125,12 @@ call vundle#end()
 " ==================================================================
 " CUSTOM REMAP SETTINGS
 " ==================================================================
-inoremap jj <ESC> " remap jj to escape in insert mode
+inoremap jj <ESC>  " remap jj to escape in insert mode
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>  " remove all trailing whitespace by pressing F5
+
+" move vertically by visual line (don't skip wrapped lines) 
+nnoremap j gj
+nnoremap k gk
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -142,6 +146,17 @@ let g:lightline = {
       \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
         \ 'subseparator': { 'left': '▒', 'right': '░' }
           \ }
+          
+" leader is comma
+let mapleader=","
+
+" turn off search highlight with ,-<space>
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Invoke Ctrl-p with c-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 
 " ==================================================================
 " PLUGIN CONFIG
