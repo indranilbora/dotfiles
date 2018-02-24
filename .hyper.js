@@ -1,13 +1,14 @@
 module.exports = {
   config: {
     updateChannel: 'stable',
+    cursorColor: '#c7c7c7',
+    cursorShape: 'UNDERLINE',
+    cursorBlink: false,
 
     fontSize: 15,
 
-    fontFamily: 'Fira Code, Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
-    uiFontFamily: 'Fira Code, Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
-      
-    padding: '',
+    fontFamily: 'Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
+    uiFontFamily: 'Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
 
     colors: {
       black: '#000000',
@@ -37,7 +38,7 @@ module.exports = {
   },
 
   plugins: [
-    'hyperterm-atom-dark',
+    'hyper-snazzy', 'hypercwd', 'hyper-hide-title',
   ],
 
   localPlugins: []
