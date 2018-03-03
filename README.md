@@ -1,6 +1,11 @@
 # dotfiles
 git, tmux, vim, zsh
 
+ZSH Prompt: spaceship-prompt
+
+VSC: Cobalt2 + Fira Code
+VSC Extensions: Material Icon Theme, Settings Sync, ESLing, GitLens, Prettier, advanced-new-file, Formatting toggle, Vim, Duplicate action
+
 
 For OSX:
 ```
