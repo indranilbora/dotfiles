@@ -7,8 +7,8 @@ module.exports = {
 
     fontSize: 15,
 
-    fontFamily: 'Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
-    uiFontFamily: 'Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
+    fontFamily: 'Source Code Pro, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
+    uiFontFamily: 'Source Code Pro, DejaVu Sans Mono, Consolas, Lucida Console, monospace',
 
     colors: {
       black: '#000000',
