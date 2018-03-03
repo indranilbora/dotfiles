@@ -6,7 +6,7 @@ prompt pure
 PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 PATH="$PATH:$PYTHON_BIN_PATH"
 
-plugins=(git)
+plugins=(git npm z node brew zsh-syntax-highlighting zsh-nvm)
 
 # vi mode
 set -o vi
