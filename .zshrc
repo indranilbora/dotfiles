@@ -24,6 +24,9 @@ alias -g N="| /dev/null"
 alias -g S='| sort'
 alias -g G='| grep' # now you can do: ls foo G something
 
+alias weather='curl -4 http://wttr.in/San_Jose'
+alias moon='curl -4 http://wttr.in/Moon'
+
 # Functions
 #
 # (f)ind by (n)ame
