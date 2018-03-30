@@ -56,3 +56,13 @@ brew cask install spectacle
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# Install powerline fonts
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
