@@ -24,6 +24,8 @@ alias -g N="| /dev/null"
 alias -g S='| sort'
 alias -g G='| grep' # now you can do: ls foo G something
 
+alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
+
 alias weather='curl -4 http://wttr.in/San_Jose'
 alias moon='curl -4 http://wttr.in/Moon'
 
