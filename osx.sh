@@ -66,3 +66,8 @@ cd fonts
 # clean-up a bit
 cd ..
 rm -rf fonts
+
+# Install NPM modules
+
+# Spaceship Prompt for ZSH
+npm install -g spaceship-prompt
