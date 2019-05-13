@@ -2,6 +2,7 @@ set laststatus=2
 set encoding=utf-8
 
 set incsearch
+set hlsearch
 
 set number " show line number
 set cursorline
