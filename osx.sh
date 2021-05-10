@@ -37,6 +37,10 @@ brew install vim --with-override-system-vi
 # Install cli tools
 brew install grep
 brew install hyper
+brew install exa
+brew install fd
+brew install fzf
+# Also install z.sh
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -71,3 +75,4 @@ rm -rf fonts
 
 # Spaceship Prompt for ZSH
 npm install -g spaceship-prompt
+npm install -g tldr
